@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { formatNumberWithDecimal } from './utils';
-import { Currency } from 'lucide-react';
 
 const currency = z
   .string()
