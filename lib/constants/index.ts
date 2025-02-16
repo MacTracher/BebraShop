@@ -8,8 +8,8 @@ export const LATEST_PRODUCTS_LIMIT =
   Number(process.env.LATEST_PRODUCTS_LIMIT) || 4;
 
 export const signInDefaultValues = {
-  email: 'admin@gmail.com',
-  password: '123456',
+  email: '',
+  password: '',
 };
 
 export const signUpDefaultValues = {
@@ -20,9 +20,9 @@ export const signUpDefaultValues = {
 };
 
 export const shippingAddressDefaultValues = {
-  fullName: 'Alex Lysenko',
-  streetAddress: 'Rampova 7',
-  city: 'Kosice',
-  postalCode: '8001',
-  country: 'Slovakia',
+  fullName: '',
+  streetAddress: '',
+  city: '',
+  postalCode: '',
+  country: '',
 };
