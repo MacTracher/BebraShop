@@ -18,3 +18,11 @@ export const signUpDefaultValues = {
   password: '',
   confirmPassword: '',
 };
+
+export const shippingAddressDefaultValues = {
+  fullName: 'Alex Lysenko',
+  streetAddress: 'Rampova 7',
+  city: 'Kosice',
+  postalCode: '8001',
+  country: 'Slovakia',
+};

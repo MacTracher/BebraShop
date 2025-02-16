@@ -45,7 +45,7 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
       confirmPassword: formData.get('confirmPassword'),
     });
 
-    const plainPassword = user.password
+    const plainPassword = user.password;
 
     user.password = hashSync(user.password, 10);
 
@@ -56,19 +56,27 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
         password: user.password,
       },
     });
-    
+
     await signIn('credentials', {
       email: user.email,
       password: plainPassword,
-    })
+    });
 
-    return {success: true, message: 'User registered successfully'}
+    return { success: true, message: 'User registered successfully' };
   } catch (error) {
-
     if (isRedirectError(error)) {
       throw error;
     }
 
     return { success: false, message: formatError(error) };
   }
+}
+
+// Get user by the ID
+export async function getUserById(userId: string) {
+  const user = await prisma.user.findFirst({
+    where: { id: userId },
+  });
+  if (!user) throw new Error('User not found');
+  return user;
 }
